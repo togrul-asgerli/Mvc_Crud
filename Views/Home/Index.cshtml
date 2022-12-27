@@ -1,0 +1,28 @@
+﻿@using MVC_Empty.Models.EntityFrameWork
+@model List<Order>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<a class="btn btn-primary" href="/Home/Insert">Insert</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OrderID</td>
+                <td>@item.ShipName</td>
+                <td><a class="btn btn-primary btn-danger" href="/Home/Update/@item.OrderID">Update</a></td>
+                <td><a class="btn btn-primary btn-warning"href="/Home/Delete/@item.OrderID">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

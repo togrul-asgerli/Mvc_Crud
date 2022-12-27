@@ -1,0 +1,26 @@
+﻿@model MVC_Empty.Models.EntityFrameWork.Order
+@{
+    ViewBag.Title = "Insert";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Insert</h2>
+
+@*<form method="post">
+    <div class="form-check">
+        <label>New UserName</label>
+        <input type="text" name="ShipName" class="form-control" />
+    </div>
+  
+    <button type="submit" class="btn btn-success">Insert</button>
+</form>*@
+@using (Html.BeginForm("Insert","Home",FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m=>m.ShipName)
+                    @Html.TextBoxFor(m=>m.ShipName, new { @class="form-control"})
+                </div>
+                @Html.HiddenFor(m=>m.OrderID)
+                <button type="submit" class="btn btn-success">Update</button>
+            }
+
